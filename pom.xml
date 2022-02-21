@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.gledoussal</groupId>
+    <groupId>fr.epicka.launcher.launcher</groupId>
     <artifactId>esperia-launcher</artifactId>
     <version>1.0</version>
     <properties>
@@ -72,7 +72,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-                            <mainClass>me.gledoussal.Main</mainClass>
+                            <mainClass>fr.epicka.launcher.Main</mainClass>
                         </manifest>
                     </archive>
 
