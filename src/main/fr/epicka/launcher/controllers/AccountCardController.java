@@ -12,8 +12,12 @@ public class AccountCardController {
     @Getter
     @Setter
     private Pane accountPane;
-    @FXML @Getter @Setter
+    @FXML
+    @Getter
+    @Setter
     private ImageView accountImage;
-    @FXML @Getter @Setter
+    @FXML
+    @Getter
+    @Setter
     private Label accountName;
 }

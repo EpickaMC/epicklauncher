@@ -22,10 +22,9 @@ import fr.epicka.launcher.nologin.account.AccountManager;
 import fr.epicka.launcher.nologin.auth.Validator;
 import lombok.Getter;
 
-public class NoLogin 
-{
-	@Getter
-	private AccountManager accountManager = new AccountManager();
-	@Getter
-	private Validator validator = new Validator();
+public class NoLogin {
+    @Getter
+    private final AccountManager accountManager = new AccountManager();
+    @Getter
+    private final Validator validator = new Validator();
 }

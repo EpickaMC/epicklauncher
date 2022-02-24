@@ -26,6 +26,7 @@ import fr.litarvan.openauth.model.response.AuthResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 
 public class Utilities {
 
@@ -33,9 +34,9 @@ public class Utilities {
         String os = System.getProperty("os.name").toLowerCase();
         String homeDirectory = System.getProperty("user.home", ".");
         File localFile;
-        if(os.contains("win")) {
+        if (os.contains("win")) {
             String roaming = System.getenv("APPDATA");
-            if(roaming != null) {
+            if (roaming != null) {
                 localFile = new File(roaming, ".openlauncherlib/");
             } else {
                 localFile = new File(homeDirectory, ".openlauncherlib/");
@@ -52,8 +53,7 @@ public class Utilities {
     }
 
     public static void initJson() {
-        try
-        {
+        try {
             File profiles = new File(getMinecraftDirectory(), "launcher_profiles.json");
             JsonObject profilesObj = new JsonObject();
             profilesObj.addProperty("clientToken", "");
@@ -70,9 +70,7 @@ public class Utilities {
             FileWriter writer = new FileWriter(profiles);
             writer.write(profilesObj.toString());
             writer.close();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -81,13 +79,12 @@ public class Utilities {
     public static void addAccount(Account acc, AuthResponse response) {
         File profiles = new File(getMinecraftDirectory(), "launcher_profiles.json");
 
-        try
-        {
+        try {
             FileInputStream fis = new FileInputStream(profiles);
             byte[] data = new byte[(int) fis.available()];
             fis.read(data);
             fis.close();
-            String jsonProfiles = new String(data, "UTF-8");
+            String jsonProfiles = new String(data, StandardCharsets.UTF_8);
             JsonObject profilesObj = (JsonObject) (new JsonParser()).parse(jsonProfiles);
 
             if (response != null) {
@@ -122,9 +119,7 @@ public class Utilities {
             writer.write(profilesObj.toString());
             writer.close();
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -132,13 +127,12 @@ public class Utilities {
     public static void updateDefaultAccount(Account acc) {
         File profiles = new File(getMinecraftDirectory(), "launcher_profiles.json");
 
-        try
-        {
+        try {
             FileInputStream fis = new FileInputStream(profiles);
             byte[] data = new byte[fis.available()];
             fis.read(data);
             fis.close();
-            String jsonProfiles = new String(data, "UTF-8");
+            String jsonProfiles = new String(data, StandardCharsets.UTF_8);
             JsonObject profilesObj = (JsonObject) (new JsonParser()).parse(jsonProfiles);
 
             profilesObj.remove("selectedUser");
@@ -151,29 +145,24 @@ public class Utilities {
             writer.write(profilesObj.toString());
             writer.close();
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static String getDefaultAccount() {
         File profiles = new File(getMinecraftDirectory(), "launcher_profiles.json");
-        try
-        {
+        try {
             FileInputStream fis = new FileInputStream(profiles);
             byte[] data = new byte[fis.available()];
             fis.read(data);
             fis.close();
-            String jsonProfiles = new String(data, "UTF-8");
+            String jsonProfiles = new String(data, StandardCharsets.UTF_8);
             JsonObject profilesObj = (JsonObject) (new JsonParser()).parse(jsonProfiles);
 
             return profilesObj.getAsJsonObject("selectedUser").get("account").getAsString();
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -181,19 +170,16 @@ public class Utilities {
 
     public static String getClientToken() {
         File profiles = new File(getMinecraftDirectory(), "launcher_profiles.json");
-        try
-        {
+        try {
             FileInputStream fis = new FileInputStream(profiles);
             byte[] data = new byte[fis.available()];
             fis.read(data);
             fis.close();
-            String jsonProfiles = new String(data, "UTF-8");
+            String jsonProfiles = new String(data, StandardCharsets.UTF_8);
             JsonObject profilesObj = (JsonObject) (new JsonParser()).parse(jsonProfiles);
 
             return profilesObj.get("clientToken").getAsString();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }

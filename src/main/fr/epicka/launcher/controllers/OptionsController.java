@@ -36,7 +36,7 @@ public class OptionsController {
 
         long memorySize = ((com.sun.management.OperatingSystemMXBean) ManagementFactory
                 .getOperatingSystemMXBean()).getTotalPhysicalMemorySize();
-        int maxMemory = (int)Math.min(12, memorySize / 1000000000);
+        int maxMemory = (int) Math.min(12, memorySize / 1000000000);
         ramSlider.setMax(maxMemory);
 
         String betaValue = AppProperties.properties.getProperty("beta", "false");
@@ -71,13 +71,14 @@ public class OptionsController {
 
     @FXML
     private void onSaveAndExit() {
-        AppProperties.properties.setProperty("ram", String.valueOf((int)ramSlider.getValue()));
+        AppProperties.properties.setProperty("ram", String.valueOf((int) ramSlider.getValue()));
         AppProperties.properties.setProperty("beta", String.valueOf(betaCheckbox.isSelected()));
         AppProperties.saveProperties();
         this.mainController.reopenPlay();
     }
 
-    @FXML void onOpenDir(MouseEvent event) {
+    @FXML
+    void onOpenDir(MouseEvent event) {
         String id = ((Control) event.getSource()).getId();
         try {
             File dir = null;
@@ -93,7 +94,7 @@ public class OptionsController {
                     break;
             }
             if (dir != null)
-            Desktop.getDesktop().open(dir);
+                Desktop.getDesktop().open(dir);
         } catch (IOException e) {
             e.printStackTrace();
         }

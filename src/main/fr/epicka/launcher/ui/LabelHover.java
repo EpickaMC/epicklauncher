@@ -8,8 +8,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 public class LabelHover extends Label {
-    private ScaleTransition scaleTransition;
-    private SimpleDoubleProperty expandToMaxProperty;
+    private final ScaleTransition scaleTransition;
+    private final SimpleDoubleProperty expandToMaxProperty;
 
     public LabelHover() {
         scaleTransition =

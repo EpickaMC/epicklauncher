@@ -19,7 +19,10 @@ public class MainController {
     @FXML
     private Label titleLabel;
 
-    @Getter @Setter @FXML private StackPane stackPane;
+    @Getter
+    @Setter
+    @FXML
+    private StackPane stackPane;
 
     @FXML
     private LoginController loginPaneController;
@@ -30,13 +33,17 @@ public class MainController {
     @FXML
     private OptionsController optionsPaneController;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Node loginNode;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Node playNode;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Node usersNode;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Node optionsNode;
 
     @FXML

@@ -28,7 +28,7 @@ public class UsersController {
                 Node accountNode = accountFXMLLoader.load();
                 AccountCardController accountCardController = accountFXMLLoader.getController();
 //                accountCardController.getAccountImage().setImage(new Image("https://crafatar.com/avatars/" + Utilities.formatUuid(acc.getUUID() + "/64")));
-                accountCardController.getAccountImage().setImage(new Image("https://minotar.net/avatar/"+ Utilities.formatUuid(acc.getUUID() +"/64.png")));
+                accountCardController.getAccountImage().setImage(new Image("https://minotar.net/avatar/" + Utilities.formatUuid(acc.getUUID() + "/64.png")));
 
                 //accountCardController.getAccountImage().setImage(Image.(outputfile));
                 System.out.println(Utilities.formatUuid(acc.getUUID() + "/64"));

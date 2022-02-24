@@ -1,5 +1,6 @@
 package fr.epicka.launcher.controllers;
 
+import fr.epicka.launcher.AppProperties;
 import fr.epicka.launcher.Main;
 import fr.epicka.launcher.nologin.util.Utilities;
 import fr.epicka.launcher.status.Server;
@@ -10,6 +11,7 @@ import fr.theshark34.openlauncherlib.minecraft.AuthInfos;
 import fr.theshark34.openlauncherlib.minecraft.GameFolder;
 import fr.theshark34.openlauncherlib.minecraft.MinecraftLauncher;
 import fr.theshark34.supdate.BarAPI;
+import fr.theshark34.supdate.SUpdate;
 import fr.theshark34.supdate.application.integrated.FileDeleter;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -21,7 +23,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import lombok.Setter;
-import fr.epicka.launcher.AppProperties;
 
 import java.awt.*;
 import java.io.File;
@@ -31,8 +32,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Scanner;
-
-import fr.theshark34.supdate.SUpdate;
 
 public class PlayController {
 
@@ -72,7 +71,7 @@ public class PlayController {
             }
         }).start();
 
-        playerImage.setImage(new Image("https://minotar.net/avatar/"+ Utilities.formatUuid(Main.account.getUUID() +"/64.png")));
+        playerImage.setImage(new Image("https://minotar.net/avatar/" + Utilities.formatUuid(Main.account.getUUID() + "/64.png")));
         playerNameLabel.setText(Main.account.getDisplayName());
         playerNameLabel.setFont(Font.font("Brown Regular"));
 

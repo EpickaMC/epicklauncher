@@ -66,10 +66,10 @@ public class Microsoft {
             String formData = "";
             if (type.equals("authorization_code")) {
                 formData = "client_id=00000000402b5328&code=" + code +
-                        "&grant_type="+type+"&redirect_uri=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf&scope=service%3A%3Auser.auth.xboxlive.com%3A%3AMBI_SSL";
+                        "&grant_type=" + type + "&redirect_uri=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf&scope=service%3A%3Auser.auth.xboxlive.com%3A%3AMBI_SSL";
             } else {
                 formData = "client_id=00000000402b5328&refresh_token=" + code +
-                        "&grant_type="+type+"&redirect_uri=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf&scope=service%3A%3Auser.auth.xboxlive.com%3A%3AMBI_SSL";
+                        "&grant_type=" + type + "&redirect_uri=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf&scope=service%3A%3Auser.auth.xboxlive.com%3A%3AMBI_SSL";
             }
 
             URL uri = new URL(authTokenUrl);
@@ -93,7 +93,7 @@ public class Microsoft {
             }
 
             String response = "";
-            for (String line; (line = br.readLine()) != null; response += line);
+            for (String line; (line = br.readLine()) != null; response += line) ;
 
             System.out.println(response);
             return new Gson().fromJson(response, JsonObject.class);
@@ -112,7 +112,7 @@ public class Microsoft {
                     "    \"Properties\": {\n" +
                     "        \"AuthMethod\": \"RPS\",\n" +
                     "        \"SiteName\": \"user.auth.xboxlive.com\",\n" +
-                    "        \"RpsTicket\": \""+token+"\"\n" +
+                    "        \"RpsTicket\": \"" + token + "\"\n" +
                     "    },\n" +
                     "    \"RelyingParty\": \"http://auth.xboxlive.com\",\n" +
                     "    \"TokenType\": \"JWT\"\n" +
@@ -139,9 +139,8 @@ public class Microsoft {
             }
 
 
-
             String response = "";
-            for (String line; (line = br.readLine()) != null; response += line);
+            for (String line; (line = br.readLine()) != null; response += line) ;
 
             return new Gson().fromJson(response, JsonObject.class);
 
@@ -158,7 +157,7 @@ public class Microsoft {
             String payload = "{\n" +
                     "    \"Properties\": {\n" +
                     "        \"SandboxId\": \"RETAIL\",\n" +
-                    "        \"UserTokens\": [\""+xblToken+"\"]\n" +
+                    "        \"UserTokens\": [\"" + xblToken + "\"]\n" +
                     "    },\n" +
                     "    \"RelyingParty\": \"rp://api.minecraftservices.com/\",\n" +
                     "    \"TokenType\": \"JWT\"\n" +
@@ -185,7 +184,7 @@ public class Microsoft {
             }
 
             String response = "";
-            for (String line; (line = br.readLine()) != null; response += line);
+            for (String line; (line = br.readLine()) != null; response += line) ;
 
             return new Gson().fromJson(response, JsonObject.class);
 
@@ -224,7 +223,7 @@ public class Microsoft {
             }
 
             String response = "";
-            for (String line; (line = br.readLine()) != null; response += line);
+            for (String line; (line = br.readLine()) != null; response += line) ;
 
             System.out.println(response);
             return new Gson().fromJson(response, JsonObject.class);
@@ -254,7 +253,7 @@ public class Microsoft {
             }
 
             String response = "";
-            for (String line; (line = br.readLine()) != null; response += line);
+            for (String line; (line = br.readLine()) != null; response += line) ;
 
             JsonObject responseJson = new Gson().fromJson(response, JsonObject.class);
 
@@ -284,7 +283,7 @@ public class Microsoft {
             }
 
             String response = "";
-            for (String line; (line = br.readLine()) != null; response += line);
+            for (String line; (line = br.readLine()) != null; response += line) ;
 
             return new Gson().fromJson(response, JsonObject.class);
 

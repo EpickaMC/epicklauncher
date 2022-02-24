@@ -2,7 +2,6 @@
  * Copyright 2015 Lifok
  *
  * This file is part of NoLogin.
-
  * NoLogin is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -18,9 +17,13 @@
  */
 package fr.epicka.launcher.nologin.account;
 
-public class Account
-{
-    private String uuid, displayName, accessToken, userId, username, refreshToken;
+public class Account {
+    private final String uuid;
+    private final String displayName;
+    private String accessToken;
+    private final String userId;
+    private final String username;
+    private String refreshToken;
     private Boolean isMicrosoft;
 
     public Account(String uuid, String displayName, String accessToken, String userId, String username) {
@@ -32,20 +35,18 @@ public class Account
         this.isMicrosoft = false;
         this.refreshToken = "";
     }
-    
-    public Account(String uuid, String displayName, String accessToken, String userId, String username, Boolean isMicrosoft)
-    {
-    	this.uuid = uuid;
-    	this.displayName = displayName;
-    	this.accessToken = accessToken;
-    	this.userId = userId;
-    	this.username = username;
-    	this.isMicrosoft = isMicrosoft;
+
+    public Account(String uuid, String displayName, String accessToken, String userId, String username, Boolean isMicrosoft) {
+        this.uuid = uuid;
+        this.displayName = displayName;
+        this.accessToken = accessToken;
+        this.userId = userId;
+        this.username = username;
+        this.isMicrosoft = isMicrosoft;
         this.refreshToken = "";
     }
 
-    public Account(String uuid, String displayName, String accessToken, String userId, String username, Boolean isMicrosoft, String refreshToken)
-    {
+    public Account(String uuid, String displayName, String accessToken, String userId, String username, Boolean isMicrosoft, String refreshToken) {
         this.uuid = uuid;
         this.displayName = displayName;
         this.accessToken = accessToken;
@@ -54,45 +55,40 @@ public class Account
         this.isMicrosoft = isMicrosoft;
         this.refreshToken = refreshToken;
     }
-    
-    public String getUUID()
-    {
-    	return uuid;
+
+    public String getUUID() {
+        return uuid;
     }
-    
-    public String getDisplayName() 
-    {
-    	return displayName;
+
+    public String getDisplayName() {
+        return displayName;
     }
-    
-    public String getAccessToken() 
-    {
-    	return accessToken;
+
+    public String getAccessToken() {
+        return accessToken;
     }
-    
-    public String getUserId()
-    {
-    	return userId;
+
+    public String getUserId() {
+        return userId;
     }
-    
-    public String getUsername()
-    {
-    	return username;
+
+    public String getUsername() {
+        return username;
     }
 
     public String getRefreshToken() {
         return refreshToken;
     }
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-	}
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
 
-	public void setRefreshToken(String refreshToken) {
+    public void setRefreshToken(String refreshToken) {
         this.refreshToken = refreshToken;
     }
 
-	public Boolean isMicrosoft() {
+    public Boolean isMicrosoft() {
         return isMicrosoft;
     }
 

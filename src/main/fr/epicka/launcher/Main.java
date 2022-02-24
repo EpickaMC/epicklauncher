@@ -1,5 +1,6 @@
 package fr.epicka.launcher;
 
+import fr.epicka.launcher.nologin.account.Account;
 import fr.theshark34.openlauncherlib.minecraft.GameInfos;
 import fr.theshark34.openlauncherlib.minecraft.GameTweak;
 import fr.theshark34.openlauncherlib.minecraft.GameType;
@@ -10,10 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.scene.text.Font;
-import fr.epicka.launcher.nologin.account.Account;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,12 +31,12 @@ public class Main extends Application {
     public static final int SERVER_PORT = 25664;
     private static final GameVersion VERSION = new GameVersion("1.12.2", GameType.V1_8_HIGHER);
 
-    public static final GameInfos INFOS = new GameInfos("EpickaDaglothsLauncher", VERSION, new GameTweak[] { GameTweak.FORGE });
+    public static final GameInfos INFOS = new GameInfos("EpickaDaglothsLauncher", VERSION, new GameTweak[]{GameTweak.FORGE});
     public static final File DIR = INFOS.getGameDir();
     public static final String UPDATE_URL = "http://launcher.dagloth.inovaperf.me/";
 
     private static final GameVersion BETA_VERSION = new GameVersion("1.12.2", GameType.V1_8_HIGHER);
-    public static final GameInfos BETA_INFOS = new GameInfos("EpickaDaglothsLauncher_beta", BETA_VERSION, new GameTweak[] { GameTweak.FORGE });
+    public static final GameInfos BETA_INFOS = new GameInfos("EpickaDaglothsLauncher_beta", BETA_VERSION, new GameTweak[]{GameTweak.FORGE});
     public static final File BETA_DIR = BETA_INFOS.getGameDir();
     public static final String BETA_UPDATE_URL = "https://testing.launcher.esperia-rp.net/";
 
@@ -51,18 +51,18 @@ public class Main extends Application {
     public static Account account;
     public static List<Account> accountList = new ArrayList<Account>();
 
-    private double  xOffset = 0.0;
-    private double  yOffset = 0.0;
+    private double xOffset = 0.0;
+    private double yOffset = 0.0;
 
     public static Stage primaryStage = null;
 
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception {
 
         Main.primaryStage = stage;
 
         if (System.getProperty("os.name").contains("Windows")) {
-            if(System.getenv("ProgramFiles(x86)") != null) {
+            if (System.getenv("ProgramFiles(x86)") != null) {
                 if (System.getProperty("sun.arch.data.model").equals("32")) {
                     JOptionPane.showMessageDialog(null, "Java 32bit est installé sur un windows" +
                             "64bit. Le jeu ne pourra pas se lancer ! Le navigateur va s'ouvrir sur le site de " +
@@ -105,8 +105,6 @@ public class Main extends Application {
         primaryStage.show();
         Platform.runLater(root::requestFocus);
     }
-
-
 
 
     public static void main(String[] args) {

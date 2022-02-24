@@ -1,10 +1,9 @@
 package fr.epicka.launcher.status;
 
 
-
-import fr.epicka.launcher.mcping.MinecraftPing;
-import fr.epicka.launcher.mcping.MinecraftPingOptions;
-import fr.epicka.launcher.mcping.MinecraftPingReply;
+import ch.jamiete.mcping.MinecraftPing;
+import ch.jamiete.mcping.MinecraftPingOptions;
+import ch.jamiete.mcping.MinecraftPingReply;
 
 import java.io.IOException;
 

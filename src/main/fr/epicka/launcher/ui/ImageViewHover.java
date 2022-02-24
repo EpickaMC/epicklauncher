@@ -9,8 +9,8 @@ import javafx.util.Duration;
 
 public class ImageViewHover extends ImageView {
 
-    private ScaleTransition scaleTransition;
-    private SimpleDoubleProperty expandToMaxProperty;
+    private final ScaleTransition scaleTransition;
+    private final SimpleDoubleProperty expandToMaxProperty;
 
     public ImageViewHover() {
 

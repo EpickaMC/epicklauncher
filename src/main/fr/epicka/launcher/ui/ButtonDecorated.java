@@ -12,14 +12,13 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class ButtonDecorated extends HBox {
-    private Label label;
-    private Region rect;
-    private TranslateTransition translateTransition;
-    private SimpleDoubleProperty expandToMaxProperty;
+    private final Label label;
+    private final Region rect;
+    private final TranslateTransition translateTransition;
+    private final SimpleDoubleProperty expandToMaxProperty;
 
     public ButtonDecorated(@NamedArg("text") String text, @NamedArg("textSize") double textSize) {
 

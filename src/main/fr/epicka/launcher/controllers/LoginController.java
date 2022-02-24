@@ -1,6 +1,7 @@
 package fr.epicka.launcher.controllers;
 
 import fr.epicka.launcher.Main;
+import fr.epicka.launcher.nologin.NoLogin;
 import fr.epicka.launcher.nologin.account.Account;
 import fr.epicka.launcher.nologin.auth.Microsoft;
 import fr.epicka.launcher.nologin.util.Utilities;
@@ -23,7 +24,6 @@ import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.Setter;
-import fr.epicka.launcher.nologin.NoLogin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +54,6 @@ public class LoginController {
     private final Stage msStage = new Stage();
 
 
-
     @FXML
     public void initialize() {
         NoLogin noLogin = new NoLogin();
@@ -67,8 +66,8 @@ public class LoginController {
         List<Account> accounts = noLogin.getAccountManager().getAccounts();
         String defaultAccount = Utilities.getDefaultAccount();
         System.out.println("Comptes trouvés : " + accounts.size());
-        for(Account acc : accounts) {
-            if(noLogin.getValidator().validateAccount(acc)) {
+        for (Account acc : accounts) {
+            if (noLogin.getValidator().validateAccount(acc)) {
                 Main.accountList.add(acc);
                 System.out.println(acc.getDisplayName() + " valide");
                 if (acc.getUUID().equals(defaultAccount) || accounts.size() == 1) {
@@ -162,7 +161,7 @@ public class LoginController {
 
                         msStage.hide();
                         String authCode = entry.getUrl().substring(entry.getUrl().indexOf("=") + 1, entry.getUrl().indexOf("&"));
-                        // once we got the auth code, we can turn it into a oauth token
+                        // once we got the auth code, we can turn it into an oauth token
 
                         Main.account = Microsoft.auth(authCode);
                         Main.accountList.add(Main.account);
