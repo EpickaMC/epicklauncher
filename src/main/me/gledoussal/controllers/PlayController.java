@@ -57,11 +57,12 @@ public class PlayController {
     public void initialize() {
 
         new Thread(() -> {
-            Server server = new Server(Main.SERVER_IP, Main.SERVER_PORT);
-            if (server.isOnline()) {
+            Server server1 = new Server(Main.SERVER_IP, Main.SERVER_PORT);
+            Server server2 = new Server(Main.SERVER_STAFF_IP, Main.SERVER_STAFF_PORT);
+            if (server1.isOnline()) {
                 playersCountLabel.setFont(Font.font("Brown Regular"));
                 Platform.runLater(() -> {
-                    playersCountLabel.setText(server.getPlayersCount() + " | " + server.getMaxPlayers());
+                    playersCountLabel.setText(server1.getPlayersCount()+server2.getPlayersCount() + " | " + server1.getMaxPlayers());
                 });
             } else {
                 Platform.runLater(() -> {
@@ -100,11 +101,17 @@ public class PlayController {
                 case "tw":
                     uri = new URI(Main.TWITTER_URL);
                     break;
-                case "fb":
-                    uri = new URI("");
+                case "s":
+                    uri = new URI(Main.SHOP_URL);
                     break;
                 case "yt":
                     uri = new URI(Main.YOUTUBE_URL);
+                    break;
+                case "in":
+                    uri = new URI(Main.INSTAGRAM_URL);
+                    break;
+                case "tk":
+                    uri = new URI(Main.TIKTOK_URL);
                     break;
             }
 
@@ -204,7 +211,7 @@ public class PlayController {
                 discordRPC.delete();
             }
 
-            String ram = AppProperties.properties.getProperty("ram", "2");
+            String ram = AppProperties.properties.getProperty("ram", "3");
             profile.getVmArgs().addAll(Arrays.asList("-Xms" + ram + "G", "-Xmx" + ram + "G"));
             mcLauncher = new ExternalLauncher(profile);
             mcLauncher.launch();

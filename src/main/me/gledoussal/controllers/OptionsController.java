@@ -29,8 +29,8 @@ public class OptionsController {
 
     @FXML
     public void initialize() {
-        int ram = 2;
-        String ramValue = AppProperties.properties.getProperty("ram", "2");
+        int ram = 3;
+        String ramValue = AppProperties.properties.getProperty("ram", "3");
         ram = Integer.parseInt(ramValue);
         ramSlider.setValue(ram);
 

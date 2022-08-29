@@ -27,16 +27,12 @@
             </LinearGradient>
         </fill>
     </Rectangle>
-    <ImageView fitHeight="64.0" layoutX="940.0" layoutY="64.0" mouseTransparent="true" pickOnBounds="true"
-               preserveRatio="true">
-        <Image url="@../images/logo.png"/>
-    </ImageView>
-    <Label layoutX="473.0" layoutY="242.0" text="Connexion à Microsoft" textFill="WHITE">
+    <Label layoutX="465.0" layoutY="242.0" text="Connexion à Microsoft" textFill="WHITE">
         <font>
             <Font size="28.0"/>
         </font>
     </Label>
-    <Button fx:id="loginMSBtn" alignment="CENTER" layoutX="600.0" layoutY="350.0" onMouseReleased="#onConnectMSClicked"
+    <Button fx:id="loginMSBtn" alignment="CENTER" layoutX="575.0" layoutY="350.0" onMouseReleased="#onConnectMSClicked"
             style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 5px 16px; -fx-border-width: 2px;"
             styleClass="hand" minHeight="45">
         <graphic>

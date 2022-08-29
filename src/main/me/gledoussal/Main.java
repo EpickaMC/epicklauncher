@@ -26,23 +26,28 @@ import java.util.Objects;
 public class Main extends Application {
 
     public static final String APPLICATION_TITLE = "Epicka Dagloth's Launcher";
-    public static final String WEBSITE_URL = "http://dagloth.inovaperf.me/";
-    public static final String SERVER_IP = "gmv4.inovaperf.fr";
-    public static final int SERVER_PORT = 25664;
+    public static final String WEBSITE_URL = "https://epicka-dagloth.fr/";
+    public static final String SHOP_URL = "https://epicka-dagloth.fr/shop";
+    public static final String SERVER_IP = "135.125.65.202";
+    public static final int SERVER_PORT = 25603;
+    public static final String SERVER_STAFF_IP = "gmv4.inovaperf.fr";
+    public static final int SERVER_STAFF_PORT = 25664;
     public static final String UPDATE_URL = "http://launcher.dagloth.inovaperf.me/";
-    public static final String DISCORD_URL = "https://discord.gg/4XSWrtcQzV";
-    public static final String TWITTER_URL = "https://twitter.com/epickarp";
-    public static final String YOUTUBE_URL = "";
-    public static final String BETA_UPDATE_URL = "https://testing.launcher.esperia-rp.net/";
-    public static final String LAUNCHER_VERSION = "Alpha - 0.5.3";
+    public static final String DISCORD_URL = "https://discord.gg/6ZpQmXZ2C5";
+    public static final String TWITTER_URL = "https://twitter.com/EpickaDagloth";
+    public static final String YOUTUBE_URL = "https://www.youtube.com/channel/UCgVSp5ErLJtZa1wO5u6XtYA";
+    public static final String INSTAGRAM_URL = "https://www.instagram.com/epickadaglothsorigins/";
+    public static final String TIKTOK_URL = "https://www.tiktok.com/@epickadagloth";
+    public static final String BETA_UPDATE_URL = "http://launcher.dagloth.inovaperf.me/";
+    public static final String LAUNCHER_VERSION = "BETA - 1.0.0";
     public static final String LAUNCHER_CHECK_URL = "http://launcher.dagloth.inovaperf.me/resources/version.txt";
-    public static final String LAUNCHER_DOWNLOAD_EXE_URL = "https://launcher.esperia-rp.net/resources/Esperia.exe";
-    public static final String LAUNCHER_DOWNLOAD_JAR_URL = "https://launcher.esperia-rp.net/resources/Esperia.jar";
+    public static final String LAUNCHER_DOWNLOAD_EXE_URL = "https://launcher.dagloth.inovaperf.me/EpickaDaglothLauncher.jar";
+    public static final String LAUNCHER_DOWNLOAD_JAR_URL = "https://launcher.dagloth.inovaperf.me/EpickaDaglothLauncher.jar";
     private static final GameVersion VERSION = new GameVersion("1.12.2", GameType.V1_8_HIGHER);
     public static final GameInfos INFOS = new GameInfos("Epicka_Dagloth", VERSION, new GameTweak[]{GameTweak.FORGE});
     public static final File DIR = INFOS.getGameDir();
     private static final GameVersion BETA_VERSION = new GameVersion("1.12.2", GameType.V1_8_HIGHER);
-    public static final GameInfos BETA_INFOS = new GameInfos("Epicka_Dagloth_testing", BETA_VERSION, new GameTweak[]{GameTweak.FORGE});
+    public static final GameInfos BETA_INFOS = new GameInfos("Epicka_Dagloth", BETA_VERSION, new GameTweak[]{GameTweak.FORGE});
     public static final File BETA_DIR = BETA_INFOS.getGameDir();
     public static Account account;
     public static List<Account> accountList = new ArrayList<Account>();
@@ -63,9 +68,9 @@ public class Main extends Application {
             if (System.getenv("ProgramFiles(x86)") != null) {
                 if (System.getProperty("sun.arch.data.model").equals("32")) {
                     JOptionPane.showMessageDialog(null, "Java 32bit est installé sur un windows" +
-                            "64bit. Le jeu ne pourra pas se lancer ! Le navigateur va s'ouvrir sur le site de " +
-                            "téléchargement de Java. Il faut télécharger la version \"Windows Hors ligne (64 bits)\"");
-                    Desktop.getDesktop().browse(new URI("https://www.java.com/fr/download/manual.jsp"));
+                            "64bit. Le jeu ne pourra pas se lancer ! Le navigateur va s'ouvrir sur le site " +
+                            "officiel de Epicka Dagloth (allez en bas de la page et vous trouverez la solution)");
+                    Desktop.getDesktop().browse(new URI("https://epicka-dagloth.fr/installation"));
                     System.exit(1);
                 }
             }

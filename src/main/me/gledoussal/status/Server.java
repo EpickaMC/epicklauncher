@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class Server {
     private MinecraftPingReply response;
-
     public Server(String ip, int port) {
         try {
             response = new MinecraftPing().getPing(new MinecraftPingOptions().setHostname(ip).setPort(port));

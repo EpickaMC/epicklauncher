@@ -76,11 +76,15 @@
             <Font size="11.0"/>
         </font>
     </Label>
-    <FlowPane columnHalignment="CENTER" layoutX="1104.0" layoutY="223.0" orientation="VERTICAL" prefHeight="292.0"
+    <FlowPane columnHalignment="CENTER" layoutX="1104.0" layoutY="223.0" orientation="VERTICAL" prefHeight="315.0"
               prefWidth="32.0" vgap="15.0">
         <ImageViewHover fx:id="w" fitHeight="32.0" fitWidth="32.0" onMouseReleased="#onExternalLinkClicked"
                         pickOnBounds="true" preserveRatio="true" styleClass="hand">
             <Image url="@../images/link.png"/>
+        </ImageViewHover>
+        <ImageViewHover fx:id="s" fitHeight="32.0" fitWidth="32.0" onMouseReleased="#onExternalLinkClicked"
+                        pickOnBounds="true" preserveRatio="true" styleClass="hand">
+            <Image url="@../images/shop.png"/>
         </ImageViewHover>
         <ImageViewHover fx:id="ds" fitHeight="32.0" fitWidth="32.0" onMouseReleased="#onExternalLinkClicked"
                         pickOnBounds="true" preserveRatio="true" styleClass="hand">
@@ -90,10 +94,17 @@
                         pickOnBounds="true" preserveRatio="true" styleClass="hand">
             <Image url="@../images/twitter.png"/>
         </ImageViewHover>
-        <ImageViewHover fx:id="yt" fitHeight="32.0" fitWidth="32.0" layoutX="1052.0" layoutY="397.0"
-                        onMouseReleased="#onExternalLinkClicked" pickOnBounds="true" preserveRatio="true"
-                        styleClass="hand">
+        <ImageViewHover fx:id="yt" fitHeight="32.0" fitWidth="32.0" onMouseReleased="#onExternalLinkClicked"
+                        pickOnBounds="true" preserveRatio="true" styleClass="hand">
             <Image url="@../images/youtube.png"/>
+        </ImageViewHover>
+        <ImageViewHover fx:id="in" fitHeight="32.0" fitWidth="32.0" onMouseReleased="#onExternalLinkClicked"
+                        pickOnBounds="true" preserveRatio="true" styleClass="hand">
+            <Image url="@../images/instagram.png"/>
+        </ImageViewHover>
+        <ImageViewHover fx:id="tk" fitHeight="32.0" fitWidth="32.0" onMouseReleased="#onExternalLinkClicked"
+                        pickOnBounds="true" preserveRatio="true" styleClass="hand">
+            <Image url="@../images/tiktok.png"/>
         </ImageViewHover>
     </FlowPane>
     <ImageViewHover fitHeight="32.0" fitWidth="32.0" layoutX="1104.0" layoutY="641.0"
